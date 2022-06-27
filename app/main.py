@@ -34,6 +34,6 @@ app.include_router(auth.router)
 app.include_router(vote.router)
 
 
-@app.get("/")  # uvicorn crud:app --reload
+@app.get("/")  # uvicorn app.main:app --reload
 def root():
     return {"message": "Hello World"}
