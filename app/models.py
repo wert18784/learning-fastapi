@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from tokenize import String
 from sqlalchemy.sql.expression import text
 from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, String, Boolean
