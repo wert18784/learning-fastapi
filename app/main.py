@@ -37,3 +37,7 @@ app.include_router(vote.router)
 @app.get("/")  # uvicorn app.main:app --reload
 def root():
     return {"message": "Hello World"}
+
+
+# prod start:
+# gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
