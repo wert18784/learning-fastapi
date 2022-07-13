@@ -8,11 +8,11 @@ from app.config import settings
 # each test should be able to be run independetly of each other
 
 # testing root url hello world path
-def test_root(client):
-    res = client.get("/")
-    print(res.json())
-    assert res.json().get("message") == "Hello World"
-    assert res.status_code == 200
+# def test_root(client):
+#     res = client.get("/")
+#     print(res.json())
+#     assert res.json().get("message") == "Hello World"
+#     assert res.status_code == 200
 
 
 # you want pytest to stop on first failure pass -x flag
