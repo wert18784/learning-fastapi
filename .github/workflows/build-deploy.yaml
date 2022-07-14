@@ -49,6 +49,7 @@ jobs: # jobs run in parallel
           pytest
 # DEPLOYING TO UBUNTU SERVER
   deploy:
+    environment: testing
     runs-on: ubuntu-latest
     needs: [build]
     steps:
