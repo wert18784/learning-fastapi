@@ -53,19 +53,19 @@ jobs: # jobs run in parallel
     needs: [build]
     steps:
       - name: pulling git repo
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd app/src
-          git pull
-          pip install -r requirements.txt
-          echo ${{ secrets.PASSWORD }} | sudo -S systemctl restart fastapi_app
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd app/src
+            git pull
+            pip install -r requirements.txt
+            echo ${{ secrets.PASSWORD }} | sudo -S systemctl restart fastapi_app
 
 
 # # DEPLOYING TO HEROKU
